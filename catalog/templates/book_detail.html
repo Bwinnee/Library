@@ -1,16 +1,18 @@
 {% extends "base_generic.html" %}
 
+{% block header %}
+  <h1 class="top">Title: {{ book.title }}</h1>
+        {% endblock %}
 {% block content %}
-  <h1>Title: {{ book.title }}</h1>
 
-  <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
-  <p><strong>Summary:</strong> {{ book.summary }}</p>
-  <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-  <p><strong>Language:</strong> {{ book.language }}</p>
-  <p><strong>Genre:</strong> {{ book.genre.all|join:", " }}</p>
+  <p class="center_body middle" ><strong>Author:</strong> <a style="color: #749aac;" href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
+  <p style="color: #749aac;" class="center_body middle"><strong class="middle" style="background-color: #ffffff00">Summary:</strong> {{ book.summary }}</p>
+  <p style="color: #749aac;" class="center_body middle"><strong class="middle" style="background-color: #ffffff00">ISBN:</strong> {{ book.isbn }}</p>
+  <p style="color: #749aac;" class="center_body middle"><strong class="middle" style="background-color: #ffffff00">Language:</strong> {{ book.language }}</p>
+  <p style="color: #749aac;" class="center_body middle"><strong class="middle" style="background-color: #ffffff00">Genre:</strong> {{ book.genre.all|join:", " }}</p>
 
-  <div style="margin-left:20px;margin-top:20px">
-    <h4>Copies</h4>
+  <div style="margin-right:20px;margin-top:20px">
+    <h4 style="width: 100%; padding: 5px; color:#a55439; background-color: #ffffff00; font-size: 30px" class="center_body middle"><strong>Copies</strong></h4>
 
     {% for copy in book.bookinstance_set.all %}
       <hr>
@@ -18,10 +20,11 @@
         {{ copy.get_status_display }}
       </p>
       {% if copy.status != 'a' %}
-        <p><strong>Due to be returned:</strong> {{ copy.due_back }}</p>
+        <p style="color: #749aac;" class="middle"><strong class="middle" style="background-color: #ffffff00">Due to be returned:</strong> {{ copy.due_back }}</p>
       {% endif %}
-      <p><strong>Imprint:</strong> {{ copy.imprint }}</p>
-      <p class="text-muted"><strong>Id:</strong> {{ copy.id }}</p>
+      <p style="color: #749aac;" class="middle"><strong class="middle" style="background-color: #ffffff00">Imprint:</strong> {{ copy.imprint }}</p>
+      <p style="color: #749aac;" class="middle"class="text-muted"><strong class="middle" style="background-color: #ffffff00">Id:</strong> {{ copy.id }}</p>
     {% endfor %}
   </div>
 {% endblock %}
+  style="color: #749aac;"

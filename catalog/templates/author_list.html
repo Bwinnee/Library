@@ -3,15 +3,15 @@
 
 {% block header %}
 
- <h1>Author List</h1>
+ <h1 class="top">Author List</h1>
             {% endblock %}
 {% block content %}
-  <h1>Author List</h1>
+
   {% if author_list %}
   <ul class="list-group">
     {% for author in author_list %}
-    <li class="list-group-item">
-        <a href="{{ author.get_absolute_url }}">{{ author.last_name }}, {{ author.first_name }}</a> born: {{ author.date_of_birth }}
+    <li class="list-group-item center_body middle"  style="background-color: #ffffff30; color: #749aac">
+        <a class="center_body middle"  style="background-color: #ffffff00" href="{{ author.get_absolute_url }}">{{ author.last_name }}, {{ author.first_name }}</a> born: {{ author.date_of_birth }}
       </li>
     {% endfor %}
   </ul>
