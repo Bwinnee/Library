@@ -3,7 +3,7 @@
 
 {% block header %}
 
- <h1 class="top">Book List</h1>
+ <h1 style="font-size: 75px;">Book List</h1>
             {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@
   <ul class="list-group">
     {% for book in book_list %}
       <li class="list-group-item center_body middle"  style="background-color: #ffffff30; color: #749aac">
-        <a class="center_body middle" style="background-color: #ffffff00" href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+        <a class="center_body middle" style=" color: #a55439"  href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
       </li>
     {% endfor %}
   </ul>

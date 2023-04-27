@@ -1,21 +1,21 @@
 {% extends "base_generic.html" %}
 
 {% block header %}
-  <h1 class="top"> Author: {{ author.last_name }}, {{ author.first_name }} </h1>
+  <h1 style="padding-right: 100px; font-size: 75px;"> Author: {{ author.last_name }}, {{ author.first_name }} </h1>
                  {% endblock %}
 {% block content %}
 
 
-  <p class="list-group-item center_body middle" style="color: #749aac; background-color: #ffffff00"><strong class="middle">First Name:</strong> {{ author.first_name }}</p> <!-- author detail link not yet defined -->
-  <p class="list-group-item center_body middle" style="color: #749aac; background-color: #ffffff00"><strong class="middle">Last Name:</strong> {{ author.last_name }}</p>
-  <p class="list-group-item center_body middle" style="color: #749aac; background-color: #ffffff00"><strong class="middle">Date of Birth:</strong> {{ author.date_of_birth }}</p>
+  <p><strong>First Name:</strong> {{ author.first_name }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Last Name:</strong> {{ author.last_name }}</p>
+  <p><strong>Date of Birth:</strong> {{ author.date_of_birth }}</p>
 <!--  <p><strong>Date of Death:</strong> {{ author.date_of_death }}</p>-->
-  <p class="list-group-item center_body middle"><strong class="middle">Books</strong></p>
-  <ul class="list-group">
 
+  <ul class="list-group">
+<li class="list-group-item center_body middle" style="background-color: #ffffff30"><strong class="m-3" style="font-size: 30px;">Books By This Author:</strong></li>
 {% for book in author.book_set.all %}
 <li class="list-group-item center_body middle" style="background-color: #ffffff30">
-        <a class="center_body middle" style="background-color: #ffffff00" href="{{ book.get_absolute_url }}">{{ book }}</a>
+        <a style=" color: #a55439" class="center_body middle" href="{{ book.get_absolute_url }}">{{ book }}</a>
       </li>
 {% endfor %}
   </ul>

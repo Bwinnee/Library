@@ -3,7 +3,7 @@
 
 {% block header %}
 
- <h1 class="top">Author List</h1>
+ <h1 style="font-size: 75px;">Author List</h1>
             {% endblock %}
 {% block content %}
 
@@ -11,7 +11,7 @@
   <ul class="list-group">
     {% for author in author_list %}
     <li class="list-group-item center_body middle"  style="background-color: #ffffff30; color: #749aac">
-        <a class="center_body middle"  style="background-color: #ffffff00" href="{{ author.get_absolute_url }}">{{ author.last_name }}, {{ author.first_name }}</a> born: {{ author.date_of_birth }}
+        <a style=" color: #a55439; font-size: 25px" class="center_body middle" href="{{ author.get_absolute_url }}">{{ author.last_name }}, {{ author.first_name }}</a> born: {{ author.date_of_birth }}
       </li>
     {% endfor %}
   </ul>
