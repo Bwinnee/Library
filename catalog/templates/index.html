@@ -2,7 +2,7 @@
 
 {% block header %}
 
- <h1 style="font-size: 75px">Library Home </h1>
+<h1 style="font-size: 75px" xmlns="http://www.w3.org/1999/html">Library Home </h1>
             {% endblock %}
 
 {% block content %}
@@ -18,5 +18,6 @@
 
 
   </ul>
+  <p class="center_body middle" style="font-size: 25px; background-color: #ffffff00;">You have visited this page <span style="color: #749aac;"> {{ num_visits }}</span> time{{ num_visits|pluralize }}.</p>
   </div>
 {% endblock %}
